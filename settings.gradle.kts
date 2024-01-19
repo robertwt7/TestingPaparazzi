@@ -15,3 +15,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Testing Paparazzi"
 include(":app")
+include(":ui")

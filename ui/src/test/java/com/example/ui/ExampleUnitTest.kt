@@ -1,4 +1,4 @@
-package com.example.testingpaparazzi
+package com.example.ui
 
 import app.cash.paparazzi.DeviceConfig
 import app.cash.paparazzi.Paparazzi
@@ -12,6 +12,17 @@ import org.junit.Rule
  *
  * See [testing documentation](http://d.android.com/tools/testing).
  */
-class ExampleViewTest {
+class ExampleUnitTest {
+  @get:Rule
+  val paparazzi = Paparazzi(
+    deviceConfig = DeviceConfig.PIXEL_5,
+    theme = "android:Theme.Material.Light.NoActionBar"
+  )
 
+  @Test
+  fun launchComposable() {
+    paparazzi.snapshot {
+      DropdownBox(expanded = true, {})
+    }
+  }
 }
