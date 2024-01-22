@@ -1,12 +1,5 @@
 package com.example.testingpaparazzi
 
-import app.cash.paparazzi.DeviceConfig
-import app.cash.paparazzi.Paparazzi
-import org.junit.Test
-
-import org.junit.Assert.*
-import org.junit.Rule
-
 /**
  * Example local unit test, which will execute on the development machine (host).
  *

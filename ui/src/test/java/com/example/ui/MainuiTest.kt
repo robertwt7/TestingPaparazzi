@@ -1,10 +1,11 @@
 package com.example.ui
 
 import app.cash.paparazzi.DeviceConfig
+import app.cash.paparazzi.InstantAnimationsRule
 import app.cash.paparazzi.Paparazzi
+import com.android.ide.common.rendering.api.SessionParams.RenderingMode.FULL_EXPAND
 import org.junit.Test
 
-import org.junit.Assert.*
 import org.junit.Rule
 
 /**
@@ -12,15 +13,25 @@ import org.junit.Rule
  *
  * See [testing documentation](http://d.android.com/tools/testing).
  */
-class ExampleUnitTest {
+class MainuiTest {
   @get:Rule
   val paparazzi = Paparazzi(
     deviceConfig = DeviceConfig.PIXEL_5,
-    theme = "android:Theme.Material.Light.NoActionBar"
+    theme = "android:Theme.Material.Light.NoActionBar",
+    renderingMode = FULL_EXPAND
   )
+  @get:Rule
+  val instantAnimationsRule = InstantAnimationsRule()
 
   @Test
-  fun launchComposable() {
+  fun exposedDropdownBox() {
+    paparazzi.snapshot {
+      ExposedDropdownBox(expanded = true, {})
+    }
+  }
+
+  @Test
+  fun dropdownBox() {
     paparazzi.snapshot {
       DropdownBox(expanded = true, {})
     }
