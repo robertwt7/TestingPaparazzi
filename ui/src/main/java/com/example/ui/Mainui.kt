@@ -1,5 +1,6 @@
 package com.example.ui
 
+import DropdownMaterial
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.material3.DropdownMenu
@@ -21,10 +22,12 @@ import androidx.compose.ui.Modifier
 fun Mainui() {
   var expanded by remember { mutableStateOf(false) }
   var expandedDropdown by remember { mutableStateOf(false) }
+  var expandedDropdownMaterial by remember { mutableStateOf(false) }
 
   Column (verticalArrangement = Arrangement.spacedBy(16.dp),) {
     ExposedDropdownBox(expanded = expanded) { expanded = it }
     DropdownBox(expanded = expandedDropdown) { expandedDropdown = it }
+    DropdownMaterial(expanded = expandedDropdownMaterial ) { expandedDropdownMaterial = it }
   }
 }
 

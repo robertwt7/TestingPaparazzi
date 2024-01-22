@@ -1,5 +1,6 @@
 package com.example.ui
 
+import DropdownMaterial
 import app.cash.paparazzi.DeviceConfig
 import app.cash.paparazzi.InstantAnimationsRule
 import app.cash.paparazzi.Paparazzi
@@ -34,6 +35,14 @@ class MainuiTest {
   fun dropdownBox() {
     paparazzi.snapshot {
       DropdownBox(expanded = true, {})
+    }
+  }
+
+
+  @Test
+  fun dropdownMaterial() {
+    paparazzi.snapshot {
+      DropdownMaterial(expanded = true, {})
     }
   }
 }
